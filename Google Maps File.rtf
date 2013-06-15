@@ -1,0 +1,304 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+  <head>\
+	<meta charset="utf-8">\
+    <title>\
+      Experiment\
+    </title>\
+    \
+    <!-- Place cursor after this and select a\
+JavaScript library from the menu above -->\
+    <style type="text/css">    \
+      \
+      body \{\
+        padding: 1em;\
+        height: 100%;\
+      \}\
+      #map-canvas \{\
+        width:550px;\
+        height:800px;\
+        position: absolute;\
+        left: 6%;\
+      \}\
+      \
+    </style>\
+    \
+    \
+    \
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">\
+    </script>\
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false">\
+    </script>\
+    <script type="text/javascript">\
+      \
+      google.maps.visualRefresh = true;\
+      \
+      function initialize() \{\
+        \
+        var mapOptions = \{\
+          zoom: 5,\
+          center: new google.maps.LatLng(10.139835, -68.6969),\
+          mapTypeId: google.maps.MapTypeId.ROADMAP,\
+          navigationControl: false,\
+          disableDoubleClickZoom: true,\
+          draggable: false,\
+          streetViewControl: false\
+        \}\
+            ;\
+        \
+        var map = new google.maps.Map(document.getElementById('map-canvas'),\
+                                      mapOptions);\
+        //Icons to replace map markers\
+      \
+        \
+        var icon_b= new google.maps.MarkerImage(     'http://encyclopedia.caribseek.com/Caribbean_Flags/images/barbados-flag.jpg', new google.maps.Size(40,25),null,null,new google.maps.Size(40,25)\
+            ) ;\
+        \
+      var icon_j= new google.maps.MarkerImage('http://encyclopedia.caribseek.com/Caribbean_Flags/images/jamaica-flag.jpg', new google.maps.Size(40,25),null,null,new google.maps.Size(40,25)\
+      )\
+          ;\
+      var icon_t= new google.maps.MarkerImage(\
+        "http://encyclopedia.caribseek.com/Caribbean_Flags/images/trinidad-and-tobago.jpg", new google.maps.Size(40,25),null,null,new google.maps.Size(40,25));\
+        \
+      var icon_bh= new google.maps.MarkerImage(\
+"http://encyclopedia.caribseek.com/Caribbean_Flags/images/bahamas-flag.jpg", new google.maps.Size(40,25), null,null,new google.maps.Size(40,25));\
+        \
+      var icon_g=\
+        new google.maps.MarkerImage('http://ostranah.com/media/flags/guyana_small_flag.gif', new google.maps.Size(40,25), null, null, new google.maps.Size(40,25));\
+        \
+      var icon_h= new google.maps.MarkerImage( 'http://encyclopedia.caribseek.com/Caribbean_Flags/images/haiti-flag.jpg', new google.maps.Size(40,25), null, null, new google.maps.Size(40,25)); \
+          \
+      var icon_dr= new google.maps.MarkerImage(\
+        'http://encyclopedia.caribseek.com/Caribbean_Flags/images/dominican-republic-flag.jpg', new google.maps.Size(40,25),null,null, new google.maps.Size(40,25));\
+     \
+        var icon_ky =new google.maps.MarkerImage("http://encyclopedia.caribseek.com/Caribbean_Flags/images/cayman-islands-flag.jpg",new google.maps.Size(40,25),null,null,new google.maps.Size(40,25));\
+    \
+      var icon_bvi= new google.maps.MarkerImage("http://encyclopedia.caribseek.com/Caribbean_Flags/images/british-virgin-islands-small-flag.jpg", new google.maps.Size(40,25),null,null, new google.maps.Size(40,25));\
+      var icon_su= new google.maps.MarkerImage(\
+    "http://us.cdn3.123rf.com/168nwm/alexis84/alexis841204/alexis84120400611/13329633-suriname-waving-flag.jpg",new google.maps.Size(40,25),null,null, new google.maps.Size(40,25));\
+      \
+      //Add locations for capital cities and countries of interest\
+      \
+      var barbados = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(13.0961, -59.6083),\
+        map: map,\
+        title: "Bridgetown, Barbados",\
+        cursor: "pointer"\
+       \
+        \
+      \}\
+                                           );\
+      \
+      var jamaica = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(17.983333, -76.8),\
+        map: map,\
+        title: "Kingston, Jamaica",\
+        cursor: "pointer",\
+        icon: icon_j\
+      \}\
+                                          );\
+      \
+      var trinidad_and_tobago = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(10.670053, -61.516940),\
+        map: map,\
+        title: "Port of Spain, Trinidad and Tobago",\
+        cursor: "pointer",\
+        icon: icon_t\
+      \}\
+                                                      );\
+      \
+      var guyana = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(6.8, -58.166667),\
+        map: map,\
+        title: "Georgetown, Guyana",\
+        cursor: "pointer",\
+        icon: icon_g\
+      \}\
+                                         );\
+      \
+      var haiti = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(18.533333, -72.333333),\
+        map:map,\
+        title:"Port Au Prince, Haiti",\
+        cursor:"pointer",\
+        icon: icon_h\
+      \}\
+                                        );\
+      \
+      var bahamas = new google.maps.Marker (\{\
+        position: new google.maps.LatLng(25.066667, -77.333333),\
+        map:map,\
+        title: "Nassau, Bahamas",\
+        cursor: "pointer",\
+        icon: icon_bh\
+      \}\
+                                           );\
+      \
+      var dominican_republic = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(18.466667, -69.95),\
+        map:map,\
+        title: "Santo Domingo, Dominican Republic",\
+        cursor: "pointer",\
+        icon: icon_dr\
+      \}\
+                                                     );\
+      \
+      var cayman = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(19.3034, -81.3863),\
+        map:map,\
+        title: "George Town, Cayman Islands",\
+        cursor: "pointer",\
+        icon: icon_ky\
+      \}\
+                                         );\
+      \
+      var suriname = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(5.866667, -55.166667),\
+        map:map,\
+        title: "Paramaribo, Suriname",\
+        cursor: "pointer",\
+        icon: icon_su\
+      \}\
+                                           );\
+      var british_virgin_islands = new google.maps.Marker(\{\
+        position: new google.maps.LatLng(18.431389, -64.623056),\
+        map:map,\
+        title: "Road Town, British Virgin Islands",\
+        cursor: "pointer",\
+        icon: icon_bvi\
+      \}\
+                                                         );\
+      \
+      var infowin_b = new google.maps.InfoWindow(\{\
+        content: "Stock exchange:  www.bse.com.bb Central Bank:  www.centralbank.org.bb	National Statistics: www.barstats.gov.bb Economy:  www.theodora.com/wfbcurrent/barbados/barbados_economy.html	Investment: www.bidc.com	Wikipedia:  http://en.wikipedia.org/wiki/Barbados"\
+      \}\
+                                                );\
+      var infowin_j= new google.maps.InfoWindow(\{\
+        content: "This is Jamaica.....unfortunately the debt here sucks"\
+      \}\
+                                               );\
+      var infowin_t= new google.maps.InfoWindow(\{\
+        content: "This is Trinidad and Tobago.....great commodities-linked market"\
+      \}\
+                                               );\
+      var infowin_g= new google.maps.InfoWindow(\{\
+        content: "This is Guyana......PeF LOVES GUYANA"\
+      \}\
+                                               );\
+      var infowin_h= new google.maps.InfoWindow(\{\
+        content: "This is Haiti.....lots of untapped potential here!"\
+      \}\
+                                               );\
+      var infowin_dr= new google.maps.InfoWindow(\{\
+        content: "This is the Dominican Republic.....great bond market potential"\
+      \}\
+                                                );\
+      var infowin_bh= new google.maps.InfoWindow(\{\
+        content: "This is the Bahamas.....heavily linked to the US"\
+      \}\
+                                                );\
+      var infowin_ky=new google.maps.InfoWindow(\{\
+        content:"This is the Cayman Islands......the hedge fund centre of the Caribbean"\
+      \}\
+                                               );\
+      var infowin_su=new google.maps.InfoWindow(\{\
+        content:"This is Suriname.....has similar prospects to Guyana"\
+      \}\
+                                               );\
+      var infowin_bvi=new google.maps.InfoWindow(\{\
+        content:"This is the British Virgin Islands.....the leading offshore trust centre in the Caribbean"\
+      \}\
+                                                );\
+      \
+      \
+      \
+      \
+      //Activity when individual markers are clicked\
+      google.maps.event.addListener(barbados, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(barbados.getPosition());\
+        infowin_b.open(barbados.get('map'), barbados)\
+          \}\
+                                   );\
+      google.maps.event.addListener(jamaica, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(jamaica.getPosition());\
+        infowin_j.open(jamaica.get('map'), jamaica)\
+          \}\
+                                   );\
+      google.maps.event.addListener(trinidad_and_tobago, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(trinidad_and_tobago.getPosition());\
+        infowin_t.open(trinidad_and_tobago.get('map'), trinidad_and_tobago)\
+          \}\
+                                   );\
+      google.maps.event.addListener(guyana, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(guyana.getPosition());\
+        infowin_g.open(guyana.get('map'), guyana)\
+          \}\
+                                   );\
+      google.maps.event.addListener(haiti, 'click', function () \{\
+        map.setZoom(5);\
+        // map.setCenter(haiti.getPosition());\
+        infowin_h.open(haiti.get('map'), haiti)\
+          \}\
+                                   );\
+      google.maps.event.addListener(bahamas, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(bahamas.getPosition());\
+        infowin_bh.open(bahamas.get('map'), bahamas)\
+          \}\
+                                   );\
+      google.maps.event.addListener(dominican_republic, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(dominican_republic.getPosition());\
+        infowin_dr.open(dominican_republic.get('map'), dominican_republic)\
+          \}\
+                                   );\
+      google.maps.event.addListener(cayman, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(cayman.getPosition());\
+        infowin_ky.open(cayman.get('map'), cayman)\
+          \}\
+                                   );\
+      google.maps.event.addListener(suriname, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(suriname.getPosition());\
+        infowin_su.open(suriname.get('map'), suriname)\
+          \}\
+                                   );\
+      google.maps.event.addListener(british_virgin_islands, 'click', function () \{\
+        map.setZoom(5);\
+        //map.setCenter(british_virgin_islands.getPosition());\
+        infowin_bvi.open(british_virgin_islands.get('map'), british_virgin_islands)\
+          \}\
+                                   );\
+      \
+    \}\
+    \
+    \
+    google.maps.event.addDomListener(window, 'load', initialize);\
+    </script>\
+    \
+    \
+  </head>\
+  \
+  \
+  <body>\
+	\
+    \
+    <div id="map-canvas">\
+      \
+    </div>\
+    \
+    \
+  </body>\
+  \
+</html>}
